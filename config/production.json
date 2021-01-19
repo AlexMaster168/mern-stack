@@ -2,5 +2,5 @@
   "port": 5000,
   "mongoUri": "mongodb+srv://AlexMaster:alexalex567@cluster0.z0x14.mongodb.net/app",
   "jwtSecret": "AlexMaster167",
-  "baseUrl": "http://localhost:5000"
+   "baseUrl": "http://localhost:5000"
 }
