@@ -1,34 +1,31 @@
 {
-  "name": "mern-course",
-  "version": "1.0.0",
-  "description": "Mern Stack",
-  "main": "app.js",
+  "name": "mern-stack",
+  "version": "2.0.0",
+  "description": "Платформа: сокращатель ссылок + LMS (модернизированный MERN-стек)",
+  "private": true,
+  "packageManager": "pnpm@10.33.2",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node app.js",
-    "server": "nodemon app.js",
-    "client": "npm run start --prefix client",
-    "client:install": "npm install --prefix client",
-    "client:build": "npm run build --prefix client",
-    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently -n server,client -c blue,green \"pnpm --filter @mern-stack/server dev\" \"pnpm --filter @mern-stack/client dev\"",
+    "dev:server": "pnpm --filter @mern-stack/server dev",
+    "dev:client": "pnpm --filter @mern-stack/client dev",
+    "build": "pnpm --filter @mern-stack/server build && pnpm --filter @mern-stack/client build",
+    "start": "pnpm --filter @mern-stack/server start",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @mern-stack/server test",
+    "seed": "pnpm --filter @mern-stack/server seed"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "keywords": [
     "mern",
-    "node"
+    "typescript",
+    "url-shortener",
+    "lms"
   ],
   "author": "Alex master",
   "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "config": "^3.3.3",
-    "express": "^4.17.1",
-    "express-validator": "^6.9.2",
-    "jsonwebtoken": "^8.5.1",
-    "materialize-css": "^1.0.0-rc.2",
-    "mongoose": "^5.11.11",
-    "shortid": "^2.2.16"
-  },
   "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^2.0.7"
+    "concurrently": "^10.0.0"
   }
 }

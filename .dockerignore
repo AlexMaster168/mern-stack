@@ -1,0 +1,21 @@
+.git
+.github
+node_modules
+**/node_modules
+dist
+**/dist
+build
+**/build
+# Секреты не должны попасть в образ
+.env
+**/.env
+!**/.env.example
+# Локальные загрузки и логи
+server/uploads/*
+!server/uploads/.gitkeep
+*.log
+# IDE / прочее
+.vscode
+.idea
+.DS_Store
+coverage

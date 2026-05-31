@@ -1,0 +1,7 @@
+packages:
+  - server
+  - client
+
+# Разрешаем сборку нативных бинарников (pnpm 10 блокирует build-скрипты по умолчанию)
+onlyBuiltDependencies:
+  - esbuild

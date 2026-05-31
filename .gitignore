@@ -1,2 +1,38 @@
+# IDE
 .idea
+.vscode/*
+!.vscode/extensions.json
+
+# Dependencies
 node_modules
+**/node_modules
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+**/.env
+!**/.env.example
+
+# Build output
+dist
+build
+**/dist
+**/build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Local uploads (картинки курсов хранятся локально)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+coverage
+.cache
